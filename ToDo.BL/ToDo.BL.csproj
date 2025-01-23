@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\ToDo.DAL\ToDo.DAL.csproj" />
       <ProjectReference Include="..\ToDo.Model\ToDo.Model.csproj" />
     </ItemGroup>
 
