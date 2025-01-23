@@ -15,7 +15,6 @@ POST {{ToDo.WebApi_HostAddress}}/tasks/
 Content-Type: application/json
 
 {
-  
 }
 
 ###
@@ -24,7 +23,6 @@ PUT {{ToDo.WebApi_HostAddress}}/tasks/
 Content-Type: application/json
 
 {
-  
 }
 
 ###

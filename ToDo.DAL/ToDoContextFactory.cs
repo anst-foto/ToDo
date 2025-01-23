@@ -19,7 +19,11 @@ public class ToDoContextFactory : IDesignTimeDbContextFactory<ToDoContext>
 
         return new ToDoContext(connectionString);
     }
-    
+
     private string[] args = [];
-    public ToDoContext CreateDbContext() => CreateDbContext(args);
+
+    public ToDoContext CreateDbContext()
+    {
+        return CreateDbContext(args);
+    }
 }

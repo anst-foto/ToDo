@@ -2,12 +2,17 @@
 
 public enum TaskPriority
 {
-    Important, Whatever
+    Important,
+    Whatever
 }
 
 public enum TaskStatus
 {
-    Planned, InProgress, Completed, Paused, OutOfTime
+    Planned,
+    InProgress,
+    Completed,
+    Paused,
+    OutOfTime
 }
 
 public class TaskDto

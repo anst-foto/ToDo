@@ -36,7 +36,7 @@ public class TaskService
         temp.Priority = task.Priority;
         temp.Status = task.Status;
         temp.IsDeleted = task.IsDeleted;
-        
+
         await _context.SaveChangesAsync();
     }
 
@@ -44,7 +44,7 @@ public class TaskService
     {
         var temp = await _context.Tasks.SingleOrDefaultAsync(t => t.Id == id);
         if (temp == null) throw new NullReferenceException();
-        
+
         temp.IsDeleted = true;
         await _context.SaveChangesAsync();
     }

@@ -7,7 +7,7 @@ namespace ToDo.DAL;
 public class ToDoContext : DbContext
 {
     private readonly string _connectionString;
-    
+
     public DbSet<TaskDto> Tasks { get; set; }
 
     public ToDoContext(string connectionString)
