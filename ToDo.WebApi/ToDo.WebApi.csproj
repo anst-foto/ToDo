@@ -17,4 +17,8 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ToDo.BL\ToDo.BL.csproj" />
+    </ItemGroup>
+
 </Project>
