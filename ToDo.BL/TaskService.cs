@@ -4,27 +4,27 @@ namespace ToDo.BL;
 
 public class TaskService
 {
-    public IEnumerable<TaskDto> GetAllTasks()
+    public async Task<IEnumerable<TaskDto>> GetAllTasksAsync()
     {
         throw new NotImplementedException();
     }
 
-    public TaskDto? GetTaskById(int id)
+    public async Task<TaskDto?> GetTaskByIdAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public void UpdateTask(TaskDto task)
+    public async Task UpdateTaskAsync(TaskDto task)
     {
         throw new NotImplementedException();
     }
 
-    public void DeleteTask(int id)
+    public async Task DeleteTaskAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public void CreateTask(TaskDto task)
+    public async Task CreateTaskAsync(TaskDto task)
     {
         throw new NotImplementedException();
     }
