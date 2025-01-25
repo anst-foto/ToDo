@@ -8,17 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.1"/>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.*"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ToDo.BL\ToDo.BL.csproj"/>
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="..\.dockerignore">
       <Link>.dockerignore</Link>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\ToDo.BL\ToDo.BL.csproj"/>
   </ItemGroup>
 
 </Project>
