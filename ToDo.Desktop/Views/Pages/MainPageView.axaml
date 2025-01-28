@@ -24,8 +24,14 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <ListBox ItemsSource="{Binding Tasks}"
-             SelectedItem="{Binding SelectedTask}"
-             ItemTemplate="{StaticResource TasksItemTemplate}"
-             SelectionMode="Single"/>
+    <DockPanel LastChildFill="True">
+        <Button Content="Load"
+                Command="{Binding CommandGetAllTasks}"
+                DockPanel.Dock="Top"/>
+
+        <ListBox ItemsSource="{Binding Tasks}"
+                 SelectedItem="{Binding SelectedTask}"
+                 ItemTemplate="{StaticResource TasksItemTemplate}"
+                 SelectionMode="Single"/>
+    </DockPanel>
 </UserControl>
