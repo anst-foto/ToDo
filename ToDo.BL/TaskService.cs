@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
 using ToDo.DAL;
 using ToDo.Model;
 
@@ -7,16 +10,24 @@ namespace ToDo.BL;
 public class TaskService
 {
     private readonly ToDoContext _context;
+    private readonly IDistributedCache _cache;
 
     public TaskService()
     {
         var contextFactory = new ToDoContextFactory();
         _context = contextFactory.CreateDbContext();
+
+        _cache = new RedisCache(new RedisCacheOptions {Configuration = "localhost"});
     }
 
-    public async Task<IEnumerable<TaskDto>> GetAllTasksAsync()
+    public async Task<IEnumerable<TaskDto>?> GetAllTasksAsync()
     {
-        return await _context.Tasks.ToListAsync();
+        var temp = await _cache.GetStringAsync("tasks");
+        if (temp is not null) return JsonSerializer.Deserialize<List<TaskDto>>(temp);
+
+        var tasks = await _context.Tasks.ToListAsync();
+        await _cache.SetStringAsync("tasks", JsonSerializer.Serialize(tasks));
+        return tasks;
     }
 
     public async Task<TaskDto?> GetTaskByIdAsync(int id)
