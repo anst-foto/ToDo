@@ -10,7 +10,8 @@ public class MainWindowViewModel : ViewModelBase
     public ObservableCollection<PagesItem> Pages { get; set; } =
     [
         new() {Page = new MainPageViewModel()},
-        new() {Page = new CreateTaskPageViewModel()}
+        new() {Page = new CreateTaskPageViewModel()},
+        new() {Page = new UpdateTaskPageViewModel()}
     ];
 
     [Reactive] public PagesItem? SelectedPage { get; set; }

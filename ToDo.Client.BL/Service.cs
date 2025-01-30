@@ -12,4 +12,7 @@ public class Service
 
     public async Task AddTaskAsync(TaskDto task) =>
         await _http.CreateTaskAsync(task);
+
+    public async Task UpdateTaskAsync(TaskDto task) =>
+        await _http.UpdateTaskAsync(task);
 }
